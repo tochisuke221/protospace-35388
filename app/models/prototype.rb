@@ -7,8 +7,9 @@ class Prototype < ApplicationRecord
   #→おそらくActiveStorageによって使えるメソッドのため
 
   #migrationファイルに記載しているのになぜ必要なのか不明→空文字すらも拒否するため
-  validates :title,presence:true
-  validates :catch_copy,presence:true
-  validates :concept,presence:true
+  validates :title,presence: true
+  validates :catch_copy,presence: true
+  validates :concept,presence: true
+  validates :image, presence: true
   
 end
