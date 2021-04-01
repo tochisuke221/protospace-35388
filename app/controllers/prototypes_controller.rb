@@ -45,7 +45,10 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    Prototype.destroy(params[:id])
+    
+    @prototype=Prototype.find(params[:id])
+    binding.pry
+    @prototype.destroy
     redirect_to root_path
   end
   
