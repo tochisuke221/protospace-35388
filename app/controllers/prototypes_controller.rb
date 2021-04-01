@@ -26,7 +26,7 @@ class PrototypesController < ApplicationController
   def show
     @prototype=Prototype.find(params[:id])
     @comment=@prototype.comments.new
-    @comments=Comment.all
+    @comments=@prototype.comments.all
   end
   
   def edit
@@ -58,7 +58,7 @@ class PrototypesController < ApplicationController
 
   def user_posted?
     @prototype=Prototype.find(params[:id])
-    unless current_user.id==@prototype.user_id
+    unless current_user && current_user.id==@prototype.user_id
       redirect_to action: :index
       
     end
